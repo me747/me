@@ -1,0 +1,53 @@
+import java.util.*;
+class Rect
+{
+private double len,wid;
+public void setData(double d1 , double d2)
+{
+ len=d1; wid=d2;
+}
+public double perimeter( )
+{
+double res= 2*(len+wid);
+return res;
+}
+ public double area( )
+ {
+double res=(len*wid);
+return res;
+ }
+public void display( )
+{
+System.out.println("The Rectangle dimensions are " +len +", " + wid);
+ }
+} //close Rect
+ 
+public class RectDemo
+{
+public static void main(String args[])
+{
+Rect r1 ; //class variable declaration
+//r1.len=2.3; //error -private member
+r1 = new Rect(); // Object 
+r1.setData(3.5,4.5);
+r1.display();
+double x = r1.perimeter();
+System.out.println("The perimeter of the Rectangle is " );
+System.out.println(x);
+System.out.println("The area of the Rectangle is " +r1.area());
+//reading data from keyboard
+System.out.println("Enter the dimensions");
+Scanner sc = new Scanner(System.in);
+double x1 = sc.nextDouble( );
+double x2 = sc.nextDouble( );
+Rect r2 = new Rect( ); // declartion and creation
+r2.setData(x1,x2);
+ r2.display();
+ System.out.println("The perimeter of the Rectangle is "+r2.perimeter());
+ System.out.println("The area of the Rectangle is " +r2.area());
+Rect r3 = r2; //reference variable
+ System.out.println("The perimeter of the Rectangle is "+r3.perimeter());
+ System.out.println("The area of the Rectangle is " +r3.area());
+ sc.close();
+ }
+}
